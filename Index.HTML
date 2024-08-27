@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incoterms Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button id="exit-btn" onclick="exitQuiz()">Exit</button>
+            <div class="title-score">
+                <h1>Incoterms Quiz</h1>
+                <div id="score">Score: 0</div>
+            </div>
+        </div>
+
+        <div id="question-container" class="question">
+            <!-- Example for 30 questions -->
+            <div id="question1">
+                <p>1. Write the 3-digit code for this Incoterm: <strong>Free on Board</strong></p>
+                <input type="text" id="incoterm-code1" placeholder="Enter 3-digit code">
+                <button onclick="checkFillInTheBlank('FOB', 'incoterm-code1', 'fill-result1')">Submit</button>
+                <p id="fill-result1"></p>
+            </div>
+
+            <div id="question2" style="display:none;">
+                <p>2. What is the full form of <strong>CIF</strong>?</p>
+                <form id="mcq-form2">
+                    <input type="radio" id="option1" name="mcq2" value="Cost, Insurance, and Freight">
+                    <label for="option1">Cost, Insurance, and Freight</label><br>
+                    <input type="radio" id="option2" name="mcq2" value="Cargo, Insurance, and Freight">
+                    <label for="option2">Cargo, Insurance, and Freight</label><br>
+                    <input type="radio" id="option3" name="mcq2" value="Cost, Insurance, and Free">
+                    <label for="option3">Cost, Insurance, and Free</label><br>
+                    <input type="radio" id="option4" name="mcq2" value="Cargo, Insurance, and Free">
+                    <label for="option4">Cargo, Insurance, and Free</label><br>
+                </form>
+                <button onclick="checkMCQ('mcq2', 'Cost, Insurance, and Freight', 'mcq-result2')">Submit</button>
+                <p id="mcq-result2"></p>
+            </div>
+
+            <div id="question3" style="display:none;">
+                <p>3. Who is responsible for export customs clearance in <strong>CIF</strong>?</p>
+                <form id="chart-form3">
+                    <input type="radio" id="option1" name="chart3" value="Buyer">
+                    <label for="option1">Buyer</label><br>
+                    <input type="radio" id="option2" name="chart3" value="Seller">
+                    <label for="option2">Seller</label><br>
+                </form>
+                <button onclick="checkChart('chart3', 'Seller', 'chart-result3')">Submit</button>
+                <p id="chart-result3"></p>
+            </div>
+
+            <!-- Repeat the structure for each of the 30 questions -->
+            <div id="question4" style="display:none;">
+                <p>4. Write the 3-digit code for this Incoterm: <strong>Cost and Freight</strong></p>
+                <input type="text" id="incoterm-code4" placeholder="Enter 3-digit code">
+                <button onclick="checkFillInTheBlank('CFR', 'incoterm-code4', 'fill-result4')">Submit</button>
+                <p id="fill-result4"></p>
+            </div>
+
+            <div id="question5" style="display:none;">
+                <p>5. What is the full form of <strong>FAS</strong>?</p>
+                <form id="mcq-form5">
+                    <input type="radio" id="option1" name="mcq5" value="Free Alongside Ship">
+                    <label for="option1">Free Alongside Ship</label><br>
+                    <input type="radio" id="option2" name="mcq5" value="Free And Secure">
+                    <label for="option2">Free And Secure</label><br>
+                    <input type="radio" id="option3" name="mcq5" value="Freight And Ship">
+                    <label for="option3">Freight And Ship</label><br>
+                    <input type="radio" id="option4" name="mcq5" value="Free And Ship">
+                    <label for="option4">Free And Ship</label><br>
+                </form>
+                <button onclick="checkMCQ('mcq5', 'Free Alongside Ship', 'mcq-result5')">Submit</button>
+                <p id="mcq-result5"></p>
+            </div>
+
+            <div id="question6" style="display:none;">
+                <p>6. Who is responsible for import customs clearance in <strong>CFR</strong>?</p>
+                <form id="chart-form6">
+                    <input type="radio" id="option1" name="chart6" value="Buyer">
+                    <label for="option1">Buyer</label><br>
+                    <input type="radio" id="option2" name="chart6" value="Seller">
+                    <label for="option2">Seller</label><br>
+                </form>
+                <button onclick="checkChart('chart6', 'Buyer', 'chart-result6')">Submit</button>
+                <p id="chart-result6"></p>
+            </div>
+
+            <!-- Add more questions up to 30 -->
+
+            <!-- Example for question 30 -->
+            <div id="question30" style="display:none;">
+                <p>30. Write the 3-digit code for this Incoterm: <strong>Ex Works</strong></p>
+                <input type="text" id="incoterm-code30" placeholder="Enter 3-digit code">
+                <button onclick="checkFillInTheBlank('EXW', 'incoterm-code30', 'fill-result30')">Submit</button>
+                <p id="fill-result30"></p>
+            </div>
+        </div>
+
+        <button id="next-btn" onclick="nextQuestion()" disabled>Next Question</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
